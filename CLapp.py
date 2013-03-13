@@ -1,5 +1,5 @@
 from bottle import Bottle, run, template, get, post, request, error, SimpleTemplate
-
+import os
 import CLSearch
 
 app = Bottle()
@@ -33,4 +33,6 @@ def error404(error):
     #return template('layout.tpl',title='404 Error', body="Sorry, there's nothing here")
    
 
-run(app, host='localhost', port=8080)
+if __name__ == '__main__':
+    port = os.environ.get('PORT',8080)
+    run(app, host='0.0.0.0', port=port)
