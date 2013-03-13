@@ -33,12 +33,10 @@ def parse_url(url):
 
 
 def find_lat_long(data):
-##  lat = data.attrs.get('data-latitude', None)
-##  lng = data.attrs.get('data-longitude', None)
-##  if lat and lng:
-##    return lat,lng
-
-  return '0','0'
+  lat = data.attrs.get('data-latitude', None)
+  lng = data.attrs.get('data-longitude', None)
+  if lat and lng:
+    return lat,lng
 
 
 def find_header(data):
@@ -84,27 +82,27 @@ def has_lat_long(entry):
     return False
 
 def parse_posts(posts):
-  postList = []
-  resultList = []
-  counter = 0  
-
-  for entry in posts:
-    if has_lat_long(entry):
-      try:
-        tmpDict = {}
-        tmpDict['loc_lat'], tmpDict['loc_long'] = find_lat_long(entry)
-        tmpDict['header'] = find_header(entry)
-        tmpDict['title'] = find_title(entry)
-        tmpDict['neighborhood'] = find_neighborhood(entry)
-        tmpDict['post_url'] = find_postURL(entry)
-        counter += 1
-        tmpDict['ID'] = counter    
-        resultList += tmpDict,
-      except:
-        continue
-      
-  return resultList
-
+##  postList = []
+##  resultList = []
+##  counter = 0  
+##
+##  for entry in posts:
+##    if has_lat_long(entry):
+##      try:
+##        tmpDict = {}
+##        tmpDict['loc_lat'], tmpDict['loc_long'] = find_lat_long(entry)
+##        tmpDict['header'] = find_header(entry)
+##        tmpDict['title'] = find_title(entry)
+##        tmpDict['neighborhood'] = find_neighborhood(entry)
+##        tmpDict['post_url'] = find_postURL(entry)
+##        counter += 1
+##        tmpDict['ID'] = counter    
+##        resultList += tmpDict,
+##      except:
+##        continue
+##      
+##  return resultList
+  return []
 
 def get_list(query,rentmin,rentmax,rooms):
   resultList = []
