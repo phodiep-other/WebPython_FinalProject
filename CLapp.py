@@ -29,10 +29,11 @@ def search_submit():
 
 @app.error(404)
 def error404(error):
-    return "sorry, doesn't exist"
-    #return template('layout.tpl',title='404 Error', body="Sorry, there's nothing here")
-   
+    return "sorry, doesn't exist"   
 
-if __name__ == '__main__':
-    port = os.environ.get('PORT',8080)
-    run(app, host='0.0.0.0', port=port)
+##if __name__ == '__main__':
+##    port = os.environ.get('PORT',8080)
+##    run(app, host='0.0.0.0', port=port)
+
+port = os.environ.get('PORT',8080)
+run(app, host='0.0.0.0', port=port)
