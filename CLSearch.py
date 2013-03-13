@@ -24,12 +24,12 @@ def get_url(query,rentmin,rentmax,rooms):
 
 def parse_url(url):
   html = urllib2.urlopen(url)
-  if html.code == 200:
-    parsed = BeautifulSoup(html)
-    return parsed
-  else:
-    raise IOError('reading %s failed with code %s' % (url, html.code))
-
+##  if html.code == 200:
+##    parsed = BeautifulSoup(html)
+##    return parsed
+##  else:
+##    raise IOError('reading %s failed with code %s' % (url, html.code))
+  return BeautifulSoup(html)
 
 
 def find_lat_long(data):
@@ -107,7 +107,6 @@ def get_list(query,rentmin,rentmax,rooms):
   resultList = []
   url = get_url(query,rentmin,rentmax,rooms)
   parsed = parse_url(url)
-  #posts = parsed.find_all('p', class_='row') #<--heroku doesn't like!
-  posts = []
+  posts = parsed.find_all('p', class_='row') #<--heroku doesn't like!
   resultList = parse_posts(posts)
   return resultList
