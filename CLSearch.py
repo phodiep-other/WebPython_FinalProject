@@ -6,19 +6,19 @@ from bs4 import BeautifulSoup
 #----
 
 def get_url(query,rentmin,rentmax,rooms):
-  if query == None:
-    query = ''
-  else:
-    query = query.replace(' ','+')
-  if rentmin == None:
-    rentmin = ''
-  if rentmax == None:
-    rentmax = ''
-  if rooms == None:
-    rooms = ''
-  
-  url = 'http://seattle.craigslist.org/search/apa?zoomToPosting=&altView=&query='+query+'&srchType=A&minAsk='+rentmin+'&maxAsk='+rentmax+'&bedrooms='+rooms
-
+##  if query == None:
+##    query = ''
+##  else:
+##    query = query.replace(' ','+')
+##  if rentmin == None:
+##    rentmin = ''
+##  if rentmax == None:
+##    rentmax = ''
+##  if rooms == None:
+##    rooms = ''
+##  
+##  url = 'http://seattle.craigslist.org/search/apa?zoomToPosting=&altView=&query='+query+'&srchType=A&minAsk='+rentmin+'&maxAsk='+rentmax+'&bedrooms='+rooms
+  url = 'http://seattle.craigslist.org/apa/'
   return url
 
 
