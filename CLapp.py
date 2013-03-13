@@ -13,11 +13,11 @@ def search_form():
 
 @app.route('/search', method='POST')
 def search_submit():
-##    location = request.forms.get('location')
-##    bed = request.forms.get('bed')
-##    rentmin = request.forms.get('rentmin')
-##    rentmax = request.forms.get('rentmax')
-##    
+    location = request.forms.get('location')
+    bed = request.forms.get('bed')
+    rentmin = request.forms.get('rentmin')
+    rentmax = request.forms.get('rentmax')
+    
 ##    results = CLSearch.get_list(location,rentmin,rentmax,bed)
 ##    return template('search_results.tpl',
 ##                    location=location,
