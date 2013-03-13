@@ -18,7 +18,8 @@ def search_submit():
     rentmin = request.forms.get('rentmin')
     rentmax = request.forms.get('rentmax')
     
-    results = CLSearch.get_list(location,rentmin,rentmax,bed)
+#    results = CLSearch.get_list(location,rentmin,rentmax,bed)
+    results = CLSearch.get_list("queen anne",'0','2000','1')
 ##    return template('search_results.tpl',
 ##                    location=location,
 ##                    bed=bed,
