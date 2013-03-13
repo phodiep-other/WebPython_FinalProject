@@ -80,15 +80,10 @@ def has_lat_long(entry):
   else:
     return False
 
-  
-def get_list(query,rentmin,rentmax,rooms):
+def parse_posts(posts):
   postList = []
   resultList = []
-  counter = 0
-  url = get_url(query,rentmin,rentmax,rooms)
-  parsed = parse_url(url)
-
-  posts = parsed.find_all('p', class_='row')
+  counter = 0  
 
   for entry in posts:
     if has_lat_long(entry):
@@ -104,5 +99,14 @@ def get_list(query,rentmin,rentmax,rooms):
         resultList += tmpDict,
       except:
         continue
+      
+  return resultList
 
+
+def get_list(query,rentmin,rentmax,rooms):
+  resultList = []
+  url = get_url(query,rentmin,rentmax,rooms)
+  parsed = parse_url(url)
+  posts = parsed.find_all('p', class_='row')
+  resultList = parse_posts(posts)
   return resultList
