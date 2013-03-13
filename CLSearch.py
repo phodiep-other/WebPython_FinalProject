@@ -24,19 +24,21 @@ def get_url(query,rentmin,rentmax,rooms):
 
 def parse_url(url):
   html = urllib2.urlopen(url)
-##  if html.code == 200:
-##    parsed = BeautifulSoup(html)
-##    return parsed
-##  else:
-##    raise IOError('reading %s failed with code %s' % (url, html.code))
-  return BeautifulSoup(html)
+  if html.code == 200:
+    parsed = BeautifulSoup(html)
+    return parsed
+  else:
+    raise IOError('reading %s failed with code %s' % (url, html.code))
+
 
 
 def find_lat_long(data):
-  lat = data.attrs.get('data-latitude', None)
-  lng = data.attrs.get('data-longitude', None)
-  if lat and lng:
-    return lat,lng
+##  lat = data.attrs.get('data-latitude', None)
+##  lng = data.attrs.get('data-longitude', None)
+##  if lat and lng:
+##    return lat,lng
+
+  return '0','0'
 
 
 def find_header(data):
