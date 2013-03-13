@@ -6,29 +6,30 @@ from bs4 import BeautifulSoup
 #----
 
 def get_url(query,rentmin,rentmax,rooms):
-##  if query == None:
-##    query = ''
-##  else:
-##    query = query.replace(' ','+')
-##  if rentmin == None:
-##    rentmin = ''
-##  if rentmax == None:
-##    rentmax = ''
-##  if rooms == None:
-##    rooms = ''
-##  
-##  url = 'http://seattle.craigslist.org/search/apa?zoomToPosting=&altView=&query='+query+'&srchType=A&minAsk='+rentmin+'&maxAsk='+rentmax+'&bedrooms='+rooms
-  url = 'http://seattle.craigslist.org/apa/'
+  if query == None:
+    query = ''
+  else:
+    query = query.replace(' ','+')
+  if rentmin == None:
+    rentmin = ''
+  if rentmax == None:
+    rentmax = ''
+  if rooms == None:
+    rooms = ''
+  
+  url = 'http://seattle.craigslist.org/search/apa?zoomToPosting=&altView=&query='+query+'&srchType=A&minAsk='+rentmin+'&maxAsk='+rentmax+'&bedrooms='+rooms
+
   return url
 
 
 def parse_url(url):
   html = urllib2.urlopen(url)
-  if html.code == 200:
-    parsed = BeautifulSoup(html)
-    return parsed
-  else:
-    raise IOError('reading %s failed with code %s' % (url, html.code))
+##  if html.code == 200:
+##    parsed = BeautifulSoup(html)
+##    return parsed
+##  else:
+##    raise IOError('reading %s failed with code %s' % (url, html.code))
+  return BeautifulSoup(html)
 
 
 def find_lat_long(data):
