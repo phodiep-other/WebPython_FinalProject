@@ -107,6 +107,7 @@ def get_list(query,rentmin,rentmax,rooms):
   resultList = []
   url = get_url(query,rentmin,rentmax,rooms)
   parsed = parse_url(url)
-##  posts = parsed.find_all('p', class_='row')
-##  resultList = parse_posts(posts)
+  #posts = parsed.find_all('p', class_='row') #<--heroku doesn't like!
+  posts = []
+  resultList = parse_posts(posts)
   return resultList
