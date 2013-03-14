@@ -5,7 +5,7 @@ Final Project for Internet Programming with Python
 Pho Diep (March 2013)
 
 Link to deployed app:
-http://block647046-fpb.blueboxgrid.com:8080/
+http://block647046-fpb.blueboxgrid.com
 
 
 Link to Github:
